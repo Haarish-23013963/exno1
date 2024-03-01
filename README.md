@@ -182,4 +182,4 @@ df.fillna(0)
 
 
 # Result
-The data clearning has beeen done successfully.
+The data cleaning has beeen done successfully.
