@@ -21,164 +21,66 @@ STEP 5: Remove outliers using IQR
 STEP 6: Use zscore of to remove outliers
 
 # Coding and Output
-
-```py
-# Developed By: Haarish V
-# Register Number: 212223230067
 ```
-<table>
-  <tr>
-    <td width=50%>
-
-
-### 1) Read and display DataFrame
-```Python
 import pandas as pd
 df=pd.read_csv('/content/SAMPLEIDS.csv')
 df
-```
-  </td>
-  <td>
-              
-#### OUTPUT:
-
-![Screenshot 2024-02-23 160851](https://github.com/Haarish-23013963/exno1/assets/147139700/ed6fdc23-4327-4401-9c65-1dbff58d6066
-)
-</td>
-</tr>
-<tr>
-  <td width=50%>
-              
-### 2) Display head
-```Python
 df.head()
-```
-  </td>
-  <td>
-              
-#### OUTPUT:
-
-![Screenshot 2024-02-23 161039](https://github.com/Haarish-23013963/exno1/assets/147139700/08999790-3655-4ba3-8ecd-997da71d7f56)
-
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
-### 3) Display tail
-```Python
 df.tail()
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
+![Screenshot 2024-02-23 155627](https://github.com/LINGARAJA-L/exno1/assets/129825857/50f59bc4-854d-44ed-a5a7-58e2db4ed670)
 
-![Screenshot 2024-02-23 161129](https://github.com/Haarish-23013963/exno1/assets/147139700/eb2150b3-8d47-482c-9f9d-0a4bc1b563a9)
-
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
-### 4) Info of datafram
-```Python
+```
 df.info()
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
+![Screenshot 2024-02-23 155627](https://github.com/LINGARAJA-L/exno1/assets/129825857/c1652bc4-1221-43d7-9b43-caa041e9e504)
 
-![Screenshot 2024-02-23 161213](https://github.com/Haarish-23013963/exno1/assets/147139700/0f350c7d-31e8-4bb8-9a8e-1956c61f3db1)
-
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
-### 5) Describe about the dataframe
-```Python
+```
 df.describe()
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
+![Screenshot 2024-02-23 155639](https://github.com/LINGARAJA-L/exno1/assets/129825857/06daaaa1-c30f-4862-b074-d382efa80330)
 
-![Screenshot 2024-02-23 161243](https://github.com/Haarish-23013963/exno1/assets/147139700/53141d5a-9a06-42ee-aa18-786406346d85)
-
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
-### 6) Shape of the datafram
-```Python
+```
 df.shape
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
+![Screenshot 2024-02-23 155639](https://github.com/LINGARAJA-L/exno1/assets/129825857/3e10b016-b53b-42cc-8760-8dc37ce380a0)
 
-![Screenshot 2024-02-23 161318](https://github.com/Haarish-23013963/exno1/assets/147139700/c62a35d3-0873-4b03-8981-8c5301d18f3b)
-
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
-### 7) Checking tha NUll values
-```Python
-df.isnull()
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
-
-![Screenshot 2024-02-23 161403](https://github.com/Haarish-23013963/exno1/assets/147139700/c0ef159f-832d-460e-a8cb-57dc20c02f07)
-
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
-### 8) Drop the Null values
-```Python
-df.dropna(axis=0)
+df.isnull().sum()
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
+![Screenshot 2024-02-23 155639](https://github.com/LINGARAJA-L/exno1/assets/129825857/fdd16109-48a7-43ca-9f24-0d33c7f1dd7f)
 
-![Screenshot 2024-02-23 161436](https://github.com/Haarish-23013963/exno1/assets/147139700/61b3d133-a7dc-4247-b3af-cdd8e98df867)
+```
+x=df.dropna(how='any')
+x
+```
+![Screenshot 2024-02-23 155648](https://github.com/LINGARAJA-L/exno1/assets/129825857/d08986ef-512d-41db-96ea-3b361d394462)
 
-</td>
-</tr>
-<tr>
-  <td width=50%>
+```
+tot=df.dropna(subset=['TOTAL'],how='any')
+tot
+```
+![Screenshot 2024-02-23 155655](https://github.com/LINGARAJA-L/exno1/assets/129825857/0bab79c0-b06d-4fee-be85-62ecf39d9e30)
 
-
-
-### 9) Fill the Null values
-```Python
+```
 df.fillna(0)
 ```
-  </td>
-  <td>
-              
-#### OUTPUT:
+![Screenshot 2024-02-23 155709](https://github.com/LINGARAJA-L/exno1/assets/129825857/5dd90d31-5c22-4859-ba11-265eaa09bbb8)
 
-![Screenshot 2024-02-23 161539](https://github.com/Haarish-23013963/exno1/assets/147139700/8353f3c6-686a-485d-8316-71c2d645db72)
+```
+mn=df.TOTAL.mean()
+mn
+```
+![Screenshot 2024-02-23 155715](https://github.com/LINGARAJA-L/exno1/assets/129825857/f54a9796-7190-4ffa-9fba-ea52b144277d)
 
-</td>
-</tr>
-<tr>
-  <td width=50%>
-
+```
+df.TOTAL.fillna(mn,inplace=True)
+for x in df.index:
+  if df.loc[x,"AVG"]>100:
+    df.drop(x,inplace=True)
+df
+```
+![Screenshot 2024-02-23 155715](https://github.com/LINGARAJA-L/exno1/assets/129825857/ebeda40e-32f2-450d-a2fb-e4c2d1103d04)
 
 # Outlier Detection and Removal 
 ## Coding and Output
@@ -333,6 +235,14 @@ z
 
 
 
+### 26)Z score 
+```Python
+print(ds[z['weight']>3])
+```
+
+
+#### OUTPUT:
+![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/5deaf50a-9342-48f4-ae99-1cc751d39320)
 
 # Result
-The data cleaning has beeen done successfully.
+The data clearning has beeen done successfully.
